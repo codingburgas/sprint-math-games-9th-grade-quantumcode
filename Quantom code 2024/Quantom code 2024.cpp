@@ -7,11 +7,9 @@ using namespace std;
 int main()
 {
 	char answer;
-	cout << "Welcome to QuantumCode" << '\n';
+	cout << "Welcome to QuantumCode" << '\n' << '\n';
 	while (true) {
-		cout << "Chose what you want to do : " << '\n';
-		cout << "1. Equation wordle" << '\n' << "2. Game" << '\n' << "3. Game" << '\n' << "4. Game" << '\n';
-		cout << "5. About us" << '\n' << "6. Quit" << '\n';
+		displayMenu();
 		cin >> answer;
 		if (answer == '1') {
 			startEquationWordle();
@@ -40,10 +38,10 @@ int main()
 			cout << "Would you like to try again? (Y/N)";
 			cin >> answer;
 			if (answer == 'y' || answer == 'Y') {
-				std::cout << '\n' << '\n';
+				cout << '\n' << '\n';
 				continue;
 			}
-			std::cout << "Quitting...";
+			cout << "Quitting...";
 			return 0;
 		}
 	}
