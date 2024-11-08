@@ -12,20 +12,18 @@ int main()
 		displayMenu();
 		cin >> answer;
 		if (answer == '1') {
-			startEquationWordle();
+			startNumberWordle();
 		}
 		else if (answer == '2') {
-			startGame();
+			startGuessTheNumber();
 		}
 		else if (answer == '3') {
-			startGame();
+			startNumberPuzzle();
 		}
 		else if (answer == '4') {
-			startGame();
+			startMathsTest();
 		}
-		else if (answer == '5') {
-			startGame();
-		}
+
 		else if (answer == '5') {
 			aboutUs();
 		}
@@ -34,7 +32,7 @@ int main()
 			return 0;
 		}
 		else {
-			cout << "You selected '" << answer << "', which is not a valid option.";
+			cout << "You selected '" << answer << "', which is not a valid option. ";
 			cout << "Would you like to try again? (Y/N)";
 			cin >> answer;
 			if (answer == 'y' || answer == 'Y') {

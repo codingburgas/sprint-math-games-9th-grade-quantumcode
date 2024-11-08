@@ -1,8 +1,12 @@
 #pragma once
 
-void startEquationWordle();
+void startNumberWordle();
 
-void startGame();
+void startGuessTheNumber();
+
+void startNumberPuzzle();
+
+void startMathsTest();
 
 void aboutUs();
 
