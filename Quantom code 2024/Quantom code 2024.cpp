@@ -32,14 +32,14 @@ int main()
 			return 0;
 		}
 		else {
-			cout << "You selected '" << answer << "', which is not a valid option. ";
-			cout << "Would you like to try again? (Y/N)";
+			cout << "You selected '" << answer << "', which is not a valid option.\n";
+			cout << "Would you like to try again? (Y/N): ";
 			cin >> answer;
-			if (answer == 'y' || answer == 'Y') {
-				cout << '\n' << '\n';
+			if (answer == 'Y' || answer == 'y') {
+				cout << "\n\n";
 				continue;
 			}
-			cout << "Quitting...";
+			cout << "Exiting the program... Goodbye!\n";
 			return 0;
 		}
 	}
