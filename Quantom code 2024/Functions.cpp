@@ -1,10 +1,6 @@
 #include "Functions.h"
 #include <iostream>
 using namespace std;
-void startNumberWordle()
-{
-
-}
 
 void startGuessTheNumber()
 {
@@ -21,8 +17,6 @@ void startGuessTheNumber()
 	cout << "                        |                                                                  |\n";
 	cout << "                        |                            Good luck!                            |\n";
 	cout << "                         ------------------------------------------------------------------                         \n";
-
-
 }
 
 void startNumberPuzzle()

@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <conio.h>
 #include "Functions.h"
+#include "numberWordle.h"
 using namespace std;
 
 int main()
