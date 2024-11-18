@@ -128,13 +128,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Functions.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="guessTheNumber.cpp" />
+=======
+    <ClCompile Include="mathsTest.cpp" />
+>>>>>>> 8f80ab3edab8b12b9f0cfb6902035e089da070ca
     <ClCompile Include="numberWordle.cpp" />
     <ClCompile Include="Quantom code 2024.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Functions.h" />
+<<<<<<< HEAD
     <ClInclude Include="guessTheNumber.h" />
+=======
+    <ClInclude Include="mathsTest.h" />
+>>>>>>> 8f80ab3edab8b12b9f0cfb6902035e089da070ca
     <ClInclude Include="numberWordle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

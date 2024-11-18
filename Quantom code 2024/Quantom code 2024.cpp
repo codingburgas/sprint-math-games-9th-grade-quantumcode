@@ -3,7 +3,11 @@
 #include <conio.h>
 #include "Functions.h"
 #include "numberWordle.h"
+<<<<<<< HEAD
 #include "guessTheNumber.h"
+=======
+#include "mathsTest.h"
+>>>>>>> 8f80ab3edab8b12b9f0cfb6902035e089da070ca
 using namespace std;
 
 int main()
