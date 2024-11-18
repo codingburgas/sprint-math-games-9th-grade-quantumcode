@@ -3,6 +3,7 @@
 #include <conio.h>
 #include "Functions.h"
 #include "numberWordle.h"
+#include "guessTheNumber.h"
 using namespace std;
 
 int main()

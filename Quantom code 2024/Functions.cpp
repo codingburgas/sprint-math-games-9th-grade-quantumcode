@@ -2,22 +2,7 @@
 #include <iostream>
 using namespace std;
 
-void startGuessTheNumber()
-{
-	cout << "                         ------------------------------------------------------------------                        \n";
-	cout << "                        |                           Number Puzzle                          |\n";
-	cout << "                        |                                                                  |\n";
-	cout << "                        |                      The Rules of the game are:                  |\n";
-	cout << "                        |                                                                  |\n";
-	cout << "                        |  There is a text that you have to read carefully.                |\n";
-	cout << "                        |  When you read the text, you have to find the number 'X'.        |\n";
-	cout << "                        |  When you find the number X, please only answer with that        |\n";
-	cout << "                        |  number.                                                         |\n";
-	cout << "                        |  You have 3 tries to find the number.                            |\n";
-	cout << "                        |                                                                  |\n";
-	cout << "                        |                            Good luck!                            |\n";
-	cout << "                         ------------------------------------------------------------------                         \n";
-}
+
 
 void startNumberPuzzle()
 {
