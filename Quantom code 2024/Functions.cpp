@@ -86,7 +86,7 @@ void displayMenu()
 	cout << "4. Take a Maths Test\n";
 	cout << "5. Learn About Us\n";
 	cout << "6. Exit\n";
-	cout << "---------------------------------\n";
+	cout << "---------------------------------\n\n";
 	cout << "Enter your choice (1-6): ";
 
 }
