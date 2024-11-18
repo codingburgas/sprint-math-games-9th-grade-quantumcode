@@ -128,11 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="mathsTest.cpp" />
     <ClCompile Include="numberWordle.cpp" />
     <ClCompile Include="Quantom code 2024.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Functions.h" />
+    <ClInclude Include="mathsTest.h" />
     <ClInclude Include="numberWordle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
