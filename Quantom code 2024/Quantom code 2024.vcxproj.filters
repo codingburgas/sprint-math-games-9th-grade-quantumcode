@@ -24,7 +24,11 @@
     <ClCompile Include="numberWordle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="guessTheNumber.cpp">
+=======
+    <ClCompile Include="mathsTest.cpp">
+>>>>>>> 8f80ab3edab8b12b9f0cfb6902035e089da070ca
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,7 +39,11 @@
     <ClInclude Include="numberWordle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="guessTheNumber.h">
+=======
+    <ClInclude Include="mathsTest.h">
+>>>>>>> 8f80ab3edab8b12b9f0cfb6902035e089da070ca
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
