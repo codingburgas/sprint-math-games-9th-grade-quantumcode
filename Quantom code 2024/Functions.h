@@ -7,3 +7,5 @@ void startMathsTest();
 void aboutUs();
 
 void displayMenu();
+
+void setColor(int color);

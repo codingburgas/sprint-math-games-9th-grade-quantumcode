@@ -1,8 +1,24 @@
 #include "Functions.h"
 #include <iostream>
+#include <Windows.h>
 using namespace std;
-
-
+#define GREEN 2
+#define DARKBLUE 1
+#define RED 4
+#define WHITE 7
+#define GOLD 6
+#define AQUA 3
+void setColor(int color)
+{
+	if (SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color))
+	{
+		return;
+	}
+	else
+	{
+		setColor(color);
+	}
+}
 
 void startNumberPuzzle()
 {
@@ -59,10 +75,9 @@ void aboutUs(){
 
 
 }
-
 void displayMenu()
 {
-	using namespace std;
+	setColor(GOLD);
 	cout << "Please choose an option from the menu below:\n";
 	cout << "---------------------------------\n";
 	cout << "1. Play Number Wordle\n";

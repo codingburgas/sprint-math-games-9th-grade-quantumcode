@@ -34,6 +34,9 @@ void startGuessTheNumber()
 				attempts--;
 				cout << " Try again.";
 			}
+			if (attempts == 0) {
+				cout << "You lost the game!" << endl;
+			}
 		}
 
 	}
