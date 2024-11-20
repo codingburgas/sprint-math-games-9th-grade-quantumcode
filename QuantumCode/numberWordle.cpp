@@ -27,26 +27,13 @@ void startNumberWordle()
 	int guess;
 	bool guessTaken = false;
 	while(true){
-		cout << generatedNumber;
 		if (attempts < 5) guessTaken = true;
 		attempts--;
 		char answer;
-		if (guessTaken && attempts >= 0) {
-			if (guess == generatedNumber) {   //if the player has won asking if they want to play again
-				cout << "You have won!" << '\n' << "Would you like to try again?(Y/N)";
-				cin >> answer;
-				if (answer == 'Y' || answer == 'y') {
-					startNumberWordle(); // if the player wants to play again restarting the game
-				}
-				else {
-					cout << "Returning to main menu...";
-					return; // returning to the main menu if the player does not want to play again
-				}
-			}
-		}
-		else if (attempts < 0) { //if the player has lost displaying the right number
+		if (attempts == -1) { //if the player has lost displaying the right number
 			cout << '\n' << "You have lost!" << '\n' << "The right number was " << generatedNumber << '\n';
 			cout << "Would you like to try again?(Y/N)"; // asking if they to play again
+			answer = 'N';
 			cin >> answer;
 			if (answer == 'Y' || answer == 'y') {
 				startNumberWordle();
@@ -56,7 +43,7 @@ void startNumberWordle()
 				return;
 			}
 		}
-		else if(attempts != 0){ //if the player has not guessed the number nor won, the game continues
+		else if(attempts >= 0){ //if the player has not guessed the number nor won, the game continues
 			cout << '\n' << "Type your guess : ";
 			cin >> guess;
 			while (!guessValid(guess)) {
@@ -83,6 +70,18 @@ void startNumberWordle()
 				}
 				if(!flag) cout << "\033[0m" << findNthDigit(i, guess);
 				//if the digit is not in the word display it as grey
+			}
+		}
+		if (guess == generatedNumber) {   //if the player has won asking if they want to play again
+			cout << "You have won!" << '\n' << "Would you like to try again?(Y/N)";
+			answer = 'N';
+			cin >> answer;
+			if (answer == 'Y' || answer == 'y') {
+				startNumberWordle(); // if the player wants to play again restarting the game
+			}
+			else {
+				cout << "Returning to main menu...";
+				return; // returning to the main menu if the player does not want to play again
 			}
 		}
 	}
