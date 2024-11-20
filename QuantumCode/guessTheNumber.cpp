@@ -15,27 +15,45 @@ struct Question {
 };
 void startGuessTheNumber()
 	{
-		
+		srand(time(nullptr));
 		vector<Question> questions;
 		createQuestions(questions);
 		int randomnum = rand() % questions.size();
 		int attempts = 3;
 		cout << questions[randomnum].question;
-		
-		int answer;
+		char answer;
+		int guess;
 		while (attempts != 0) {
-			srand(time(nullptr));
 
-			cin >> answer;
-			if (answer == questions[randomnum].answer) {
-				cout << "Congrats🎉!! You won!";
+			cin >> guess;
+			if (guess == questions[randomnum].answer) {
+				cout << "You won!" << '\n' << "Would you like to try again?(Y/N)";
+				
+				cin >> answer;
+				if (answer == 'y' || answer == 'Y') {
+					cout << "Restarting..." << '\n' << '\n' << '\n';
+					startGuessTheNumber();
+				}
+				else {
+					cout << "Returning to main menu...";
+					return;
+				}
 			}
 			else {
 				attempts--;
 				cout << " Try again.";
 			}
 			if (attempts == 0) {
-				cout << "You lost the game!" << endl;
+				cout << "You lost the game!" << '\n' << "Would you like to try again?(Y/N)";
+				cin >> answer;
+				if (answer == 'y' || answer == 'Y') {
+					cout << "Restarting..." << '\n\n\n';
+					startGuessTheNumber();
+				}
+				else {
+					cout << "Returning to main menu...";
+					return;
+				}
 			}
 		}
 
@@ -58,7 +76,7 @@ void startGuessTheNumber()
 		Question q12(98, "The number X I have in mind is the largest two-digit number divisible by 14.");
 		Question q13(1008, "The number X I have in mind is the smallest four-digit number divisible by 16.");
 		Question q14(999, "The number X I have in mind is the largest three-digit number divisible by 9.");
-		Question q15(22, "The number X I have in mind is the smallest two-digit number divisible by 11.");
+		Question q15(11, "The number X I have in mind is the smallest two-digit number divisible by 11.");
 		Question q16(9990, "The number X I have in mind is the largest four-digit number divisible by 18.");
 		Question q17(108, "The number X I have in mind is the smallest three-digit number divisible by 12.");
 		Question q18(85, "The number X I have in mind is the largest two-digit number divisible by 17.");
@@ -140,7 +158,7 @@ void startGuessTheNumber()
 		Question q94(952, "The number X I have in mind is the largest three-digit number divisible by 34.");
 		Question q95(24, "The number X I have in mind is the smallest two-digit number divisible by 12.");
 		Question q96(9996, "The number X I have in mind is the largest four-digit number divisible by 78.");
-		Question q97(120, "The number X I have in mind is the smallest three-digit number divisible by 20.");
+		Question q97(100, "The number X I have in mind is the smallest three-digit number divisible by 20.");
 		Question q98(80, "The number X I have in mind is the largest two-digit number divisible by 16.");
 		Question q99(1008, "The number X I have in mind is the smallest four-digit number divisible by 48.");
 		Question q100(994, "The number X I have in mind is the largest three-digit number divisible by 14.");
