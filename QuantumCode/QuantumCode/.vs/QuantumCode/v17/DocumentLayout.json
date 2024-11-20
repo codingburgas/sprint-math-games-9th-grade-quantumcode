@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\flieu\\Desktop\\Viktor\\sprint-math-games-9th-grade-quantumcode\\QuantumCode\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{44F43A81-80E4-4A8B-B6AD-A191A14D5695}|QuantumCode\\QuantumCode.vcxproj|C:\\Users\\flieu\\Desktop\\Viktor\\sprint-math-games-9th-grade-quantumcode\\QuantumCode\\QuantumCode\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{44F43A81-80E4-4A8B-B6AD-A191A14D5695}|QuantumCode\\QuantumCode.vcxproj|solutionrelative:QuantumCode\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\flieu\\Desktop\\Viktor\\sprint-math-games-9th-grade-quantumcode\\QuantumCode\\QuantumCode\\main.cpp",
+              "RelativeDocumentMoniker": "QuantumCode\\main.cpp",
+              "ToolTip": "C:\\Users\\flieu\\Desktop\\Viktor\\sprint-math-games-9th-grade-quantumcode\\QuantumCode\\QuantumCode\\main.cpp",
+              "RelativeToolTip": "QuantumCode\\main.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-20T18:01:37.938Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
