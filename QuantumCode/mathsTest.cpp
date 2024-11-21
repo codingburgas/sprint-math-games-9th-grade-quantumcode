@@ -53,4 +53,7 @@ void startMathsTest()
 	if (answer == questions[randomQuestion].answer) {
 		cout << "Hooray! You got it right!";
 	}
+	else {
+		cout << "Wrong answer! Try again!";
+	}
 }
