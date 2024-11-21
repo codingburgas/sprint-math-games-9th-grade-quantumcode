@@ -14,6 +14,21 @@ struct Question {
 };
 void startMathsTest()
 {
+	cout << "                         ------------------------------------------------------------------                        \n";
+	cout << "                        |                           Maths Test                             |\n";
+	cout << "                        |                                                                  |\n";
+	cout << "                        |                      The Rules of the game are:                  |\n";
+	cout << "                        |                                                                  |\n";
+	cout << "                        |  A mathematic question has been asked.                           |\n";
+	cout << "                        |  You have to type in the right answer, in order to               |\n";
+	cout << "                        |  succeed. Otherwise, it says you have failed.                    |\n";
+	cout << "                        |  The questions are rightfully taken from the                     |\n";
+	cout << "                        |  9th grade Mathematics coursebook.                               |\n";
+	cout << "                        |  The test includes questions from : Algebra,                     |\n";
+	cout << "                        |  Percentages, Roots, Geometry.                                   |\n";
+	cout << "                        |                                                                  |\n";
+	cout << "                        |                            Good luck!                            |\n";
+	cout << "                         ------------------------------------------------------------------                         \n";
 	Question q1(120, "What is permutation of 5?");
 	Question q2(720, "What is permutation of 6?");
 	Question q3(24, "What is permutation of 4?");
