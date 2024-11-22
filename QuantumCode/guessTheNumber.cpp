@@ -15,47 +15,65 @@ struct Question {
 };
 void startGuessTheNumber()
 	{
-		srand(time(nullptr));
+	cout << "                         ------------------------------------------------------------------                        \n";
+	cout << "                        |                           Guess The Number                       |\n";
+	cout << "                        |                                                                  |\n";
+	cout << "                        |                      The Rules of the game are:                  |\n";
+	cout << "                        |                                                                  |\n";
+	cout << "                        |  A text will appear on your screen                               |\n";
+	cout << "                        |  Read the text carefully and try to guess the number X           |\n";
+	cout << "                        |  The number X ranges from 0 to 10000.                            |\n";                     
+	cout << "                        |                                                                  |\n";
+	cout << "                        |                You have 3 tries to guess the number.             |\n";
+	cout << "                        |                            Good luck!                            |\n";
+	cout << "                         ------------------------------------------------------------------                         \n";
+	cout << "                                                                                                                       \n";
+	cout << "                                                                                                                  \n";
+	//displaying rules
+		srand(time(nullptr)); //Makes a random question appear every time
 		vector<Question> questions;
 		createQuestions(questions);
 		int randomnum = rand() % questions.size();
-		int attempts = 3;
+		int attempts = 3; // How many attempts a player has
 		cout << questions[randomnum].question;
 		char answer;
 		int guess;
 		while (attempts != 0) {
-
-			cin >> guess;
+			cin >> guess; // The player has to enter a guess
 			if (guess == questions[randomnum].answer) {
-				cout << "You won!" << '\n' << "Would you like to try again?(Y/N)";
-				
+				cout << "You won!" << '\n' << "Would you like to try again? (Y/N): ";
 				cin >> answer;
 				if (answer == 'y' || answer == 'Y') {
 					cout << "Restarting..." << '\n' << '\n' << '\n';
-					startGuessTheNumber();
+					startGuessTheNumber(); // Restart the game
 				}
 				else {
 					cout << "Returning to main menu...";
-					return;
+					return; // Exit to the main menu
 				}
 			}
 			else {
 				attempts--;
-				cout << " Try again.";
+				if (attempts > 0) {
+					cout << "Incorrect. Try again! Attempts left: " << attempts << '\n'; // When the answer is wrong it shows how many attempts has left
+				}
 			}
+
 			if (attempts == 0) {
-				cout << "You lost the game!" << '\n' << "Would you like to try again?(Y/N)";
-				cin >> answer;
+				cout << "You lost the game! The correct answer was: " << questions[randomnum].answer << '\n'; // When the player has lost it shows the right answer
+				cout << "Would you like to try again? (Y/N): "; // Asking if they want to try again
+				cin >> answer; 
 				if (answer == 'y' || answer == 'Y') {
-					cout << "Restarting..." << '\n\n\n';
-					startGuessTheNumber();
+					cout << "Restarting..." << '\n\n\n'; 
+					startGuessTheNumber(); // Restart the game
 				}
 				else {
 					cout << "Returning to main menu...";
-					return;
+					return; // Exit the game or return to the main menu
 				}
 			}
 		}
+
 
 	}
 
@@ -131,7 +149,7 @@ void startGuessTheNumber()
 		Question q67(108, "The number X I have in mind is the smallest three-digit number divisible by 36.");
 		Question q68(85, "The number X I have in mind is the largest two-digit number divisible by 17.");
 		Question q69(1020, "The number X I have in mind is the smallest four-digit number divisible by 60.");
-		Question q70(968, "The number X I have in mind is the largest three-digit number divisible by 31.");
+		Question q70(999, "The number X I have in mind is the largest three-digit number divisible by 31.");
 		Question q71(50, "The number X I have in mind is the smallest two-digit number divisible by 50.");
 		Question q72(9996, "The number X I have in mind is the largest four-digit number divisible by 63.");
 		Question q73(128, "The number X I have in mind is the smallest three-digit number divisible by 32.");
@@ -162,6 +180,7 @@ void startGuessTheNumber()
 		Question q98(80, "The number X I have in mind is the largest two-digit number divisible by 16.");
 		Question q99(1008, "The number X I have in mind is the smallest four-digit number divisible by 48.");
 		Question q100(994, "The number X I have in mind is the largest three-digit number divisible by 14.");
+		// The questions
 		questions.push_back(q1);
 		questions.push_back(q2);
 		questions.push_back(q3);
@@ -262,4 +281,5 @@ void startGuessTheNumber()
 		questions.push_back(q98);
 		questions.push_back(q99);
 		questions.push_back(q100);
+		// Adds the questions to the end of the questions vector.
 	}

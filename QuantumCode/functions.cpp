@@ -8,6 +8,7 @@ using namespace std;
 #define WHITE 7
 #define GOLD 6
 #define AQUA 3
+// define the colors, with their number
 void setColor(int color)
 {
 	if (SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color))
@@ -63,8 +64,8 @@ void displayMenu()
 	cout << "| | | |   __|  |__|   --|  |  | | | |   __|    | | |  |  |  |  |  |  |  |     | | | | | | |  |  | | | |  |   --|  |  |  |  |   __| \n";
 	cout << "|_____|_____|_____|_____|_____|_|_|_|_____|    |_| |_____|  |__  _|_____|__|__|_|___| |_| |_____|_|_|_|  |_____|_____|____/|_____| \n";
 	cout << "                                                               |__|                                                                \n";
-
-	setColor(GOLD);
+	//welcome message
+	setColor(GOLD); //the color of the text
 	cout << "Please choose an option from the menu below:\n";
 	cout << "---------------------------------\n";
 	cout << "1. Play Number Wordle\n";
@@ -74,6 +75,6 @@ void displayMenu()
 	cout << "5. Learn About Us\n";
 	cout << "6. Exit\n";
 	cout << "---------------------------------\n\n";
-	cout << "Enter your choice (1-6): ";
+	cout << "Enter your choice (1-6): "; 
 
 }

@@ -1,1 +1,3 @@
-﻿LINK : fatal error LNK1168: cannot open C:\Users\david\OneDrive\Desktop\sprint-math-games-9th-grade-quantumcode\x64\Debug\QuantumCode.exe for writing
+﻿  guessTheNumber.cpp
+C:\Users\Home\source\repos\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\guessTheNumber.cpp(33,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  QuantumCode.vcxproj -> C:\Users\Home\source\repos\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\x64\Debug\QuantumCode.exe

@@ -12,11 +12,11 @@ int main()
 	char answer;
 	
 	while (true) {
-		system("cls");
+		system("cls"); // clears the screen when selected
 		displayMenu();
 		cin >> answer;
 		if (answer == '1') {
-			startNumberWordle();
+			startNumberWordle(); 
 		}
 		else if (answer == '2') {
 			startGuessTheNumber();
@@ -27,24 +27,23 @@ int main()
 		else if (answer == '4') {
 			startMathsTest();
 		}
-
 		else if (answer == '5') {
-			aboutUs();
+			aboutUs(); //choices
 		}
 		else if (answer == '6') {
 			cout << "Quitting...";
-			return 0;
+			return 0; //stops the program
 		}
 		else {
-			cout << "You selected '" << answer << "', which is not a valid option.\n";
+			cout << "You selected '" << answer << "', which is not a valid option.\n"; //When selected a non-valid answer
 			cout << "Would you like to try again? (Y/N): ";
-			cin >> answer;
+			cin >> answer; 
 			if (answer == 'Y' || answer == 'y') {
 				cout << "\n\n";
-				continue;
+				continue; 
 			}
 			cout << "Exiting the program... Goodbye!\n";
-			return 0;
+			return 0; //stops the program
 		}
 	}
 }
