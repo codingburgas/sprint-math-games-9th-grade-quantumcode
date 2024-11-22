@@ -20,7 +20,7 @@ Find the randomly generated number by receiving hints if your guess is higher or
 Solve a riddle or complete a missing word/phrase using given letters or clues.
 
 4. Maths Test
-Answer timed math questions to test your speed and accuracy at various difficulty levels. </p>
+Answer math questions to test your speed and accuracy at various difficulty levels. </p>
 <br>
  
 ## 📃 Documentation <a name="docs"></a>
@@ -39,7 +39,7 @@ Answer timed math questions to test your speed and accuracy at various difficult
 <br></br>
 1. Clone the repo:
 ```
-  git clone https://github.com/MVKoleva21/valium.git
+  git clone https://github.com/
 ```
  
 2. Run with IDE of choice
@@ -65,7 +65,7 @@ Answer timed math questions to test your speed and accuracy at various difficult
 <br></br>
 <br></br>
 ## 🧑 Collaborators <a name="collaborators"></a>
-- [David Papazqn](https://github.com/DHPapazian) - Back-end Developer
-- [Kirill Jilichev](https://github.com/KAGilichev) - Back-end Developer
+- [David Papazyan](https://github.com/DHPapazian) - Back-end Developer
+- [Kirill Zhilichev](https://github.com/KAGilichev) - Back-end Developer
 - [Konstantin Turmanov](https://github.com/KSTurmanov) - Scrum Trainer
 - [Georgi Litsanovski](https://github.com/GVLitsanowski) - Back-end Developer
