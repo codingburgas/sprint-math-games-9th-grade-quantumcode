@@ -1,122 +1,152 @@
 #include "numberwordle.h"
 #include <iostream>
 #include <random>
+#include "functions.h"
 using namespace std;
 
+// Defining color codes for console text
+#define GREEN 2
+#define DARKBLUE 1
+#define RED 4
+#define WHITE 7
+#define GOLD 6
+#define AQUA 3
+
+
+// Function to start the Number Wordle game
 void startNumberWordle()
 {
-	cout << "                         ------------------------------------------------------------------                        \n";
-	cout << "                        |                           Number Puzzle                          |\n";
-	cout << "                        |                                                                  |\n";
-	cout << "                        |                      The Rules of the game are:                  |\n";
-	cout << "                        |                                                                  |\n";
-	cout << "                        |  A number in the range of 10000 to 99999 has been riddled        |\n";
-	cout << "                        |  A digit glowing in yellow means it is in the number             |\n";
-	cout << "                        |  There is a text that you have to read carefully.                |\n";
-	cout << "                        |  but in the wrong spot.                                          |\n";
-	cout << "                        |  A digit glowing in green means it is in the number              |\n";
-	cout << "                        |  and in the right spot.                                          |\n";
-	cout << "                        |  A non-glowing digit means it is not in the number.              |\n";
-	cout << "                        |                                                                  |\n";
-	cout << "                        |                      You have 5 tries to guess it.               |\n";
-	cout << "                        |                            Good luck!                            |\n";
-	cout << "                         ------------------------------------------------------------------                         \n";
-	//displaying rules
-	int generatedNumber = generateNumber();
-	int attempts = 5;
-	int guess;
-	bool guessTaken = false;
-	while(true){
-		if (attempts < 5) guessTaken = true;
-		attempts--;
-		char answer;
-		if (attempts == -1) { //if the player has lost displaying the right number
-			cout << '\n' << "You have lost!" << '\n' << "The right number was " << generatedNumber << '\n';
-			cout << "Would you like to try again?(Y/N)"; // asking if they to play again
-			answer = 'N';
-			cin >> answer;
-			if (answer == 'Y' || answer == 'y') {
-				startNumberWordle();
-			}
-			else {
-				cout << "Returning to main menu...";
-				return;
-			}
-		}
-		else if(attempts >= 0){ //if the player has not guessed the number nor won, the game continues
-			cout << '\n' << "Type your guess : ";
-			cin >> guess;
-			while (!guessValid(guess)) {
-				cout << "Your guess is not valid! Please try again.(10000-99999) : ";
-				cin >> guess; // if the guess is not valid ask the user to try again
-			}
-			for (int i = 4; i > -1; i--){
-				bool flag = false;
-				if (findNthDigit(i, guess) == findNthDigit(i, generatedNumber)) {
-						cout << "\033[32m" << findNthDigit(i, guess) << "\033[0m";
-						//display that the digit is in the right place(green)
-						flag = true; //the flag shows that the number was found
-				}
-				if (flag) continue; 
-				for (int j = 3; j > -1; j--) {
-					if (findNthDigit(i, guess) == findNthDigit(j, generatedNumber) && i != j) {
+    setColor(AQUA);
+    cout << "====================================================================\n";
+    cout << "|                        NUMBER PUZZLE GAME                         |\n";
+    cout << "====================================================================\n";
+    setColor(WHITE);
 
-						cout << "\033[33m" << findNthDigit(i, guess) << "\033[0m";
-						//display that the digit is in the wrong place but in the number(yellow)
-						flag = true;
-						break;
+    // Displaying the game rules with better formatting
+    setColor(GREEN);
+    cout << "Game Rules:\n";
+    cout << "  - A 5-digit number between 10000 and 99999 is hidden.\n";
+    cout << "  - You have 5 attempts to guess it.\n";
+    cout << "  - Each guess will give you feedback:\n";
+    cout << "    - A digit glowing in \033[1;32mgreen\033[0m means the digit is in the correct position.\n";
+    cout << "    - A digit glowing in \033[1;33myellow\033[0m means it is in the number but in the wrong position.\n";
+    cout << "    - A digit with no glow means it is not in the number at all.\n";
+    cout << "====================================================================\n";
 
-					}
-				}
-				if(!flag) cout << "\033[0m" << findNthDigit(i, guess);
-				//if the digit is not in the word display it as grey
-			}
-		}
-		if (guess == generatedNumber) {   //if the player has won asking if they want to play again
-			cout << "You have won!" << '\n' << "Would you like to try again?(Y/N)";
-			answer = 'N';
-			cin >> answer;
-			if (answer == 'Y' || answer == 'y') {
-				startNumberWordle(); // if the player wants to play again restarting the game
-			}
-			else {
-				cout << "Returning to main menu...";
-				return; // returning to the main menu if the player does not want to play again
-			}
-		}
-	}
+    // Initializing the game
+    int generatedNumber = generateNumber();
+    int attempts = 5;
+    int guess;
+    bool guessTaken = false;
+
+    // Game loop
+    while (true) {
+        if (attempts < 5) guessTaken = true;
+        attempts--;
+        char answer;
+
+        if (attempts == -1) { // If the player has lost
+            SetColor(RED);
+            cout << "\nYou have lost! The right number was " << generatedNumber << endl;
+            SetColor(WHITE);
+            cout << "Would you like to try again? (Y/N): ";
+            cin >> answer;
+            if (answer == 'Y' || answer == 'y') {
+                startNumberWordle(); // Restart the game
+            }
+            else {
+                SetColor(GOLD);
+                cout << "Returning to the main menu...\n";
+                return;
+            }
+        }
+        else if (attempts >= 0) { // If the player still has attempts left
+            SetColor(WHITE);
+            cout << "\nYou have " << attempts << " attempts left.\n";
+            cout << "Type your guess: ";
+            cin >> guess;
+
+            while (!guessValid(guess)) {
+                SetColor(RED);
+                cout << "Your guess is not valid! Please try again (10000-99999): ";
+                SetColor(WHITE);
+                cin >> guess; // If the guess is not valid, ask again
+            }
+
+            // Feedback loop for each digit in the guess
+            for (int i = 4; i > -1; i--) {
+                bool flag = false;
+                if (findNthDigit(i, guess) == findNthDigit(i, generatedNumber)) {
+                    SetColor(GREEN);
+                    cout << findNthDigit(i, guess); // Green if the digit is in the right place
+                    flag = true;
+                }
+                if (flag) continue;
+
+                // Check for yellow (wrong place but in the number)
+                for (int j = 3; j > -1; j--) {
+                    if (findNthDigit(i, guess) == findNthDigit(j, generatedNumber) && i != j) {
+                        SetColor(DARKBLUE);
+                        cout << findNthDigit(i, guess); // Yellow if the digit is in the number but wrong place
+                        flag = true;
+                        break;
+                    }
+                }
+
+                if (!flag) {
+                    SetColor(WHITE);
+                    cout << findNthDigit(i, guess); // White if the digit is not in the number
+                }
+            }
+        }
+
+        if (guess == generatedNumber) { // If the player has won
+            SetColor(GREEN);
+            cout << "\nYou have won! Congratulations!\n";
+            SetColor(WHITE);
+            cout << "Would you like to try again? (Y/N): ";
+            cin >> answer;
+            if (answer == 'Y' || answer == 'y') {
+                startNumberWordle(); // Restart the game
+            }
+            else {
+                SetColor(GOLD);
+                cout << "Returning to the main menu...\n";
+                return;
+            }
+        }
+    }
 }
 
+// Function to generate a random 5-digit number between 10000 and 99999
 int generateNumber()
 {
-	srand(time(nullptr));
-	int number = (rand() % 90000) + 10000; // generating number in range [10000, 99999]
-	return number;
+    srand(time(nullptr));
+    return (rand() % 90000) + 10000;
 }
 
+// Function to extract the Nth digit from a number
 int findNthDigit(int digit, int number)
 {
-
-	int last_digit = 0;
-	for (int i = 0; i <= digit; i++) {
-		last_digit = number % 10;			//getting the last digit of the number
-		if (i == digit) return last_digit;	
-		number = number / 10;				//deleting the last digit of the number
-	}
-	return last_digit;
+    int last_digit = 0;
+    for (int i = 0; i <= digit; i++) {
+        last_digit = number % 10; // Getting the last digit of the number
+        if (i == digit) return last_digit;
+        number = number / 10; // Deleting the last digit of the number
+    }
+    return last_digit;
 }
 
+// Function to check if a guess is a valid 5-digit number
 bool guessValid(int guess)
 {
-	int firstDigit;
-	int digitCount = 0;
-	if (guess < 0 || guess == 0) return false;
-	while (guess > 0) {
-		guess = guess / 10;
-		digitCount++;
-		if (guess < 10 && guess > 0) firstDigit = guess;
-		//checking if the number is valid
-	}
-	return (digitCount == 5 && firstDigit != 0);
-	// if the number is 5-digit and the first digit is not a 0 the number is valid
+    int firstDigit;
+    int digitCount = 0;
+    if (guess < 0 || guess == 0) return false;
+    while (guess > 0) {
+        guess = guess / 10;
+        digitCount++;
+        if (guess < 10 && guess > 0) firstDigit = guess;
+    }
+    return (digitCount == 5 && firstDigit != 0); // Valid if it's a 5-digit number with no leading zero
 }

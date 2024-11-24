@@ -1,3 +1,15 @@
-﻿  guessTheNumber.cpp
-C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\guessTheNumber.cpp(257,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  QuantumCode.vcxproj -> C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\x64\Debug\QuantumCode.exe
+﻿  numberWordle.cpp
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(23,5): error C3861: 'SetColor': identifier not found
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(49,13): error C3861: 'SetColor': identifier not found
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(51,13): error C3861: 'SetColor': identifier not found
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(58,17): error C3861: 'SetColor': identifier not found
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(64,13): error C3861: 'SetColor': identifier not found
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(70,17): error C3861: 'SetColor': identifier not found
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(72,17): error C3861: 'SetColor': identifier not found
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(80,21): error C3861: 'SetColor': identifier not found
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(89,25): error C3861: 'SetColor': identifier not found
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(97,21): error C3861: 'SetColor': identifier not found
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(104,13): error C3861: 'SetColor': identifier not found
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(106,13): error C3861: 'SetColor': identifier not found
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(113,17): error C3861: 'SetColor': identifier not found
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(124,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
