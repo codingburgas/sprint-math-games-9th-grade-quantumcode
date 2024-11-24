@@ -5,6 +5,7 @@
 #include "numberWordle.h"
 #include "guessTheNumber.h"
 #include "mathsTest.h"
+#include "numberPuzzle.h"
 using namespace std;
 
 int main()

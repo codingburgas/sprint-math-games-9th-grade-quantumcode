@@ -131,12 +131,14 @@
     <ClCompile Include="guessTheNumber.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mathsTest.cpp" />
+    <ClCompile Include="numberPuzzle.cpp" />
     <ClCompile Include="numberWordle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions.h" />
     <ClInclude Include="guessTheNumber.h" />
     <ClInclude Include="mathsTest.h" />
+    <ClInclude Include="numberPuzzle.h" />
     <ClInclude Include="numberWordle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

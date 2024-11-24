@@ -30,6 +30,9 @@
     <ClCompile Include="numberWordle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="numberPuzzle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="numberWordle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="numberPuzzle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
