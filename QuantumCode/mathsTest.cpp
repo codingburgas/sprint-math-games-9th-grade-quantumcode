@@ -1,42 +1,50 @@
 #include <iostream>
-#include <random>
-#include <vector>
-#include <string>
-#include <Windows.h>
-#include "mathsTest.h"
+#include <random> //For generating random numbers
+#include <vector> //For using the vector container
+#include <string> //For using the string class
+#include <Windows.h> //For Windows-specific console color functions
+#include "mathsTest.h" //Including the fuctions and definitions for the Maths Test
 using namespace std;
+
+//Defining color codes for console text
 #define RED 4
 #define GREEN 2
 #define DARKBLUE 1
 #define AQUA 3
 #define GOLD 6
 
+//Function, used to set the console text color
 void SetColor(int color)
 {
-	if (SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color))
+	if (SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color)) //Try to set the console text color
 	{
 		return;
 	}
-	else
+	else //If setting the color fails, to set it to GOLD as a fallback
 	{
 		SetColor(GOLD);
 	}
 }
 
+//Structure, representing a mathematical question
 struct Question
 {
-	string question;
-	int answer;
-	Question(int answer, string question)
+	string question; //Holds the text of the question
+	int answer; // Holds the correct answer to the question
+	Question(int answer, string question) //Constructor to intialize the question and answer
 	{
 		this->answer = answer;
 		this->question = question;
 	}
 };
 
+//Function to start the Maths Test
 void startMathsTest()
 {
+	//Set the console text color to AQUA for the test header
 	SetColor(AQUA);
+
+	//Display the tests' instructions
 	cout << "                         ------------------------------------------------------------------                        \n";
 	cout << "                        |                           Maths Test                             |\n";
 	cout << "                        |                                                                  |\n";
@@ -52,6 +60,8 @@ void startMathsTest()
 	cout << "                        |                                                                  |\n";
 	cout << "                        |                            Good luck!                            |\n";
 	cout << "                         ------------------------------------------------------------------                         \n";
+	
+	//Initialize a list of questions with their correct answers
 	Question q1(120, "What is permutation of 5?");
 	Question q2(720, "What is permutation of 6?");
 	Question q3(24, "What is permutation of 4?");
@@ -76,6 +86,8 @@ void startMathsTest()
 	Question q22(1, "What does the square root of 25 divided by 5 equal?");
 	Question q23(42, "If a=7 and b=6, what's the value of c, when c = a.b");
 	Question q24(14, "If a= 42 and b=3, what's the value of c, when c = a:b");
+
+	//Store the questions in a vector
 	vector<Question> questions; 
 	questions.push_back(q1);
 	questions.push_back(q2);
@@ -101,10 +113,12 @@ void startMathsTest()
 	questions.push_back(q22);
 	questions.push_back(q23);
 	questions.push_back(q24);
-	int answer = 0;
-	int randomQuestion = rand() % questions.size();
-	cout << questions[randomQuestion].question;
+	int answer = 0; //Variable to store user's answer
+	int randomQuestion = rand() % questions.size(); //Generate a random index to select a question
+	cout << questions[randomQuestion].question; //Ask the randomly selected question
 	cin >> answer;
+
+	//Check if the user's answer is correct 
 	if (answer == questions[randomQuestion].answer)
 	{
 		SetColor(GREEN);
