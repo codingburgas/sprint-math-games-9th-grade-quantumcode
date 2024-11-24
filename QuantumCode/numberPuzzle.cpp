@@ -3,70 +3,87 @@
 #include <ctime>
 #include <Windows.h>
 #include "functions.h"
+#include "numberPuzzle.h"
 using namespace std;
 
-void startNumberPuzzle() {
+// Defining color codes for console text
+#define GREEN 2
+#define DARKBLUE 1
+#define RED 4
+#define WHITE 7
+#define GOLD 6
+#define AQUA 3
 
-    setColor(3); // Display the title
-    cout << "+--------------------------------------------------------------------------------+\n";
-    cout << "|                                NUMBER PUZZLE                                   |\n";
-    cout << "+--------------------------------------------------------------------------------+\n";
-
-    // Display rules
-    setColor(6); 
-    cout << "|                                   RULES                                        |\n";
-    cout << "|                                                                                |\n";
-    cout << "|  1. The game will choose a random number between 1 and 100.                    |\n";
-    cout << "|  2. You must guess the number by entering values.                              |\n";
-    cout << "|  3. The system will give you hints:                                            |\n";
-    cout << "|      - Guess higher if your guess is too low.                                  |\n";
-    cout << "|      - Guess lower if your guess is too high.                                  |\n";
-    cout << "|  4. Keep guessing until you find the correct number.                           |\n";
-    cout << "|                                                                                |\n";
-    cout << "|                              GOOD LUCK!                                        |\n";
-    cout << "+--------------------------------------------------------------------------------+\n\n";
-
-    // generate a random number
-    srand((unsigned int)time(NULL));
-    int number = (rand() % 100) + 1;
-    int guess = 0;
-
-    // Game loop
-    do {
-        setColor(7);
-        cout << "Enter your guess (1-100): ";
-        cin >> guess; //enter guess
-
-        if (guess > number) {
-            setColor(4); // when the number is lower displaying in red
-            cout << "\n*********************************************\n";
-            cout << "*                GUESS LOWER!               *\n";
-            cout << "*********************************************\n\n";
-        }
-        else if (guess < number) {
-            setColor(2); // when the number is higher displaying in green
-            cout << "\n*********************************************\n";
-            cout << "*                GUESS HIGHER!              *\n";
-            cout << "*********************************************\n\n";
-        }
-        else {
-            setColor(14); // When the player wins displaying in yellow
-            cout << "\n*********************************************\n";
-            cout << "*                 YOU WON!                  *\n";
-            cout << "*********************************************\n\n";
-        }
-    } while (guess != number); 
-    cout << "\n*********************************************\n";
-    cout << "*               CONGRATULATIONS!             *\n";
-    cout << "*        DO YOU WANT TO PLAY AGAIN?(Y/N)      *\n";
-    cout << "*********************************************\n\n"; // ask if the player wants to play again
-    char answer;
-    cin >> answer;
-    if (answer == 'y' || answer == 'Y') {
-        startNumberPuzzle(); // restarting the game
+// Function to validate input
+bool isValid(string guess) {
+    for (size_t i = 0; i < guess.size(); i++) {
+        if (!isdigit(guess[i])) return false;
     }
-    else {
-        cout << "Returning to main menu..."; // else returning to the menu
-        return;
+    int num = stoi(guess);
+    return num >= 1 && num <= 100;
+}
+
+void startNumberPuzzle() {
+    while (true) {
+        // Display title and rules
+        setColor(AQUA);
+        cout << "+--------------------------------------------------------------------------------+\n";
+        cout << "|                                NUMBER PUZZLE                                   |\n";
+        cout << "+--------------------------------------------------------------------------------+\n";
+
+        setColor(GOLD);
+        cout << "|                                   RULES                                        |\n";
+        cout << "|  1. The game will choose a random number between 1 and 100.                    |\n";
+        cout << "|  2. Guess the number. Hints will guide you (higher/lower).                     |\n";
+        cout << "|  3. Keep guessing until correct.                                              |\n";
+        cout << "|                              GOOD LUCK!                                       |\n";
+        cout << "+--------------------------------------------------------------------------------+\n\n";
+
+        // Generate random number
+        srand((unsigned int)time(NULL));
+        int number = (rand() % 100) + 1;
+        string guess;
+        
+        // Game loop
+        do {
+            setColor(WHITE);
+            cout << "Enter your guess (1-100): ";
+            cin >> guess;
+
+            while (!isValid(guess)) {
+                cout << "Invalid guess. Try again (1-100): ";
+                cin >> guess;
+            }
+            int guessInt = stoi(guess); // turns the string into integer
+            
+            if (guessInt > number) { // if the guess is higher display "guess lower!"
+                setColor(RED);
+                cout << "\n*********************************************\n";
+                cout << "*                GUESS LOWER!               *\n";
+                cout << "*********************************************\n\n";
+            }
+            else if (guessInt < number) { // if the guess is higher display "guess higher!"
+                setColor(GREEN);
+                cout << "\n*********************************************\n";
+                cout << "*                GUESS HIGHER!              *\n";
+                cout << "*********************************************\n\n";
+            }
+            else { // if the player has won display "you won!"
+                setColor(GOLD);
+                cout << "\n*********************************************\n";
+                cout << "*                 YOU WON!                  *\n";
+                cout << "*********************************************\n\n";
+            }
+        } while (stoi(guess) != number);
+
+        // Ask if the player wants to play again
+        setColor(WHITE);
+        cout << "Do you want to play again? (Y/N): ";
+        char answer;
+        cin >> ws >> answer;
+        if (tolower(answer) != 'y') {
+            cout << "Returning to main menu...\n"; // if not return to the main menu
+            break;
+        }
     }
 }

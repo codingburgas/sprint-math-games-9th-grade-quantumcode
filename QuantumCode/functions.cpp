@@ -27,15 +27,15 @@ void aboutUs()
 {
 	cout << "                         ================================================================                         \n";
 	cout << "                        ||                            ABOUT US                           ||\n";
-	cout << "                        ||                                                                 ||\n";
-	cout << "                        ||                    We are Quantum Code:                        ||\n";
-	cout << "                        ||                                                                 ||\n";
-	cout << "                        ||              We created 4 fun and educational games:           ||\n";
-	cout << "                        ||                1. Number Wordle Guess                           ||\n";
-	cout << "                        ||                 2. Guess The Number                             ||\n";
-	cout << "                        ||                  3. Guess the Puzzle                            ||\n";
-	cout << "                        ||                    4. Maths Test                                ||\n";
-	cout << "                        ||                       Good luck!                                ||\n";
+	cout << "                        ||                                                               ||\n";
+	cout << "                        ||                    We are Quantum Code:                       ||\n";
+	cout << "                        ||                                                               ||\n";
+	cout << "                        ||              We created 4 fun and educational games:          ||\n";
+	cout << "                        ||                1. Number Wordle Guess                         ||\n";
+	cout << "                        ||                 2. Guess The Number                           ||\n";
+	cout << "                        ||                  3. Guess the Puzzle                          ||\n";
+	cout << "                        ||                    4. Maths Test                              ||\n";
+	cout << "                        ||                       Good luck!                              ||\n";
 	cout << "                         ================================================================                         \n";
 }
 //about us menu

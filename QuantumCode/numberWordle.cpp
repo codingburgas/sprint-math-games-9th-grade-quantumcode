@@ -1,6 +1,7 @@
 #include "numberwordle.h"
 #include <iostream>
 #include <random>
+#include <string>
 #include "functions.h"
 using namespace std;
 
@@ -34,14 +35,14 @@ void startNumberWordle()
 
     int generatedNumber = generateNumber();
     int attempts = 6;
-    int guess;
+    string guess;
     bool guessTaken = false;
-
     // Starting a loop and counting the attempts
     while (true) {
         if (attempts < 5) guessTaken = true;
         attempts--;
         char answer;
+        // Check if the input is a valid number
 
         if (attempts == 0) { // If the player has lost
             setColor(RED);
@@ -63,7 +64,7 @@ void startNumberWordle()
             cout << "\nYou have " << attempts << " attempts left.\n";
             cout << "Type your guess: ";
             cin >> guess;
-
+            
             while (!guessValid(guess)) {
                 setColor(RED);
                 cout << "Your guess is not valid! Please try again (10000-99999): ";
@@ -74,18 +75,18 @@ void startNumberWordle()
             // Tell if the player has found any digits
             for (int i = 4; i > -1; i--) {
                 bool flag = false;
-                if (findNthDigit(i, guess) == findNthDigit(i, generatedNumber)) {
+                if (findNthDigit(i, stoi(guess)) == findNthDigit(i, generatedNumber)) {
                     setColor(GREEN);
-                    cout << findNthDigit(i, guess); // Green if the digit is in the right place
+                    cout << findNthDigit(i, stoi(guess)); // Green if the digit is in the right place
                     flag = true;
                 }
                 if (flag) continue;
 
                 // Check for yellow (wrong place but in the number)
                 for (int j = 3; j > -1; j--) {
-                    if (findNthDigit(i, guess) == findNthDigit(j, generatedNumber) && i != j) {
+                    if (findNthDigit(i, stoi(guess)) == findNthDigit(j, generatedNumber) && i != j) {
                         setColor(GOLD);
-                        cout << findNthDigit(i, guess); // Yellow if the digit is in the number but wrong place
+                        cout << findNthDigit(i, stoi(guess)); // Yellow if the digit is in the number but wrong place
                         flag = true;
                         break;
                     }
@@ -93,12 +94,12 @@ void startNumberWordle()
 
                 if (!flag) {
                     setColor(WHITE);
-                    cout << findNthDigit(i, guess); // White if the digit is not in the number
+                    cout << findNthDigit(i, stoi(guess)); // White if the digit is not in the number
                 }
             }
         }
 
-        if (guess == generatedNumber) { // If the player has won
+        if (stoi(guess) == generatedNumber) { // If the player has won
             setColor(GREEN);
             cout << "\nYou have won! Congratulations!\n";
             setColor(WHITE);
@@ -136,15 +137,39 @@ int findNthDigit(int digit, int number)
 }
 
 // Function to check if a guess is a valid 5-digit number
-bool guessValid(int guess)
+bool guessValid(string guess)
 {
+    bool flag = false;
+    for (char& element : guess) {
+        if (!isdigit(element)) flag = true;
+    }
+    if (flag) {
+        bool flag2 = false;
+        int counter = 0;
+        while (flag) {
+            guess.clear();
+            setColor(RED);
+            cout << "Invalid guess! Please enter a number between 10000 - 99999: " << '\n';
+            setColor(WHITE);
+            cin >> guess;
+            for (char& element : guess) {
+                if (isdigit(element)) {
+                    counter++;
+                }
+                if (counter == guess.size()) flag2 = true;
+            }
+            if (flag2) flag = false;
+        }
+    }
     int firstDigit;
     int digitCount = 0;
-    if (guess < 0 || guess == 0) return false;
-    while (guess > 0) {
-        guess = guess / 10;
+    int num = stoi(guess);
+    if (num < 0 || num == 0) return false;
+    while (num > 0) {
+        num = num / 10;
         digitCount++;
-        if (guess < 10 && guess > 0) firstDigit = guess;
+        if (num < 10 && num > 0) firstDigit = num;
     }
+
     return (digitCount == 5 && firstDigit != 0); // Valid if it's a 5-digit number with no leading zero
 }

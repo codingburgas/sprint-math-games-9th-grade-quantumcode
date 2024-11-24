@@ -2,6 +2,7 @@
 #include <random>
 #include <string>
 #include "functions.h"
+#include "guessTheNumber.h"
 #include <vector>
 using namespace std;
 
@@ -274,25 +275,14 @@ void startGuessTheNumber()
 		cin >> guess; // The player has to enter a guess
 
 		// Check if the input is a valid number
-		for (char& element : guess) {
-			if (!isdigit(element)) flag = true;
-		}
-		if (flag) {
-			bool flag2 = false;
-			int counter = 0;
-			while (flag) {
-				cout << "Invalid guess! Please enter a number between 0 - 10000: ";
-				cin >> guess;
-				for (char& element : guess) {
-					if (isdigit(element)) {
-						counter++;
-					}
-					if (counter == guess.size()) flag2 = true;
-				}
-				if (flag2) flag = false;
+		if (!isValid(guess)) {
+			while (!isValid(guess)) {
+				setColor(RED);
+				cout << "Guess not valid. Try again(0-10000)";// Check if the guess is correct
+				setColor(WHITE);
 			}
 		}
-		// Check if the guess is correct
+		
 		if (stoi(guess) == questions[randomnum].answer) {// if the player has guessed the number
 			setColor(GREEN);  
 			cout << "Congratulations! You guessed the correct number!\n";
