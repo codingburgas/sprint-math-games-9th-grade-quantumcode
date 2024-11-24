@@ -1,10 +1,5 @@
-﻿  functions.cpp
-  guessTheNumber.cpp
-C:\Users\david\OneDrive\Desktop\sprint-math-games-9th-grade-quantumcode\QuantumCode\functions.cpp(63,10): warning C4129: '|': unrecognized character escape sequence
-C:\Users\david\OneDrive\Desktop\sprint-math-games-9th-grade-quantumcode\QuantumCode\guessTheNumber.cpp(33,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  main.cpp
-  mathsTest.cpp
-  numberWordle.cpp
-C:\Users\david\OneDrive\Desktop\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(92,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
-  QuantumCode.vcxproj -> C:\Users\david\OneDrive\Desktop\sprint-math-games-9th-grade-quantumcode\x64\Debug\QuantumCode.exe
+﻿  mathsTest.cpp
+C:\Users\david\OneDrive\Desktop\sprint-math-games-9th-grade-quantumcode\QuantumCode\mathsTest.cpp(71,11): error C2374: 'q12': redefinition; multiple initialization
+  C:\Users\david\OneDrive\Desktop\sprint-math-games-9th-grade-quantumcode\QuantumCode\mathsTest.cpp(66,11):
+  see declaration of 'q12'
+  
