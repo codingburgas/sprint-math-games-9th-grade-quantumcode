@@ -75,10 +75,12 @@ void startMathsTest()
 	cin >> answer;
 	if (answer == questions[randomQuestion].answer)
 	{
+		SetColor(GREEN);
 		cout << "Hooray! You got it right!";
 	}
 	else
 	{
+		SetColor(RED);
 		cout << "Wrong answer! Try again!";
 	}
 }
