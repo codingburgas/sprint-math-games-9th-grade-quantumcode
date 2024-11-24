@@ -2,18 +2,41 @@
 #include <random>
 #include <vector>
 #include <string>
+#include <Windows.h>
 #include "mathsTest.h"
 using namespace std;
-struct Question {
+#define RED 4
+#define GREEN 2
+#define DARKBLUE 1
+#define AQUA 3
+#define GOLD 6
+
+void SetColor(int color)
+{
+	if (SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color))
+	{
+		return;
+	}
+	else
+	{
+		SetColor(GOLD);
+	}
+}
+
+struct Question
+{
 	string question;
 	int answer;
-	Question(int answer, string question) {
+	Question(int answer, string question)
+	{
 		this->answer = answer;
 		this->question = question;
 	}
 };
+
 void startMathsTest()
 {
+	SetColor(AQUA);
 	cout << "                         ------------------------------------------------------------------                        \n";
 	cout << "                        |                           Maths Test                             |\n";
 	cout << "                        |                                                                  |\n";
@@ -50,10 +73,12 @@ void startMathsTest()
 	int randomQuestion = rand() % questions.size();
 	cout << questions[randomQuestion].question;
 	cin >> answer;
-	if (answer == questions[randomQuestion].answer) {
+	if (answer == questions[randomQuestion].answer)
+	{
 		cout << "Hooray! You got it right!";
 	}
-	else {
+	else
+	{
 		cout << "Wrong answer! Try again!";
 	}
 }
