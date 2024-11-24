@@ -12,7 +12,6 @@ using namespace std;
 #define GOLD 6
 #define AQUA 3
 
-
 // Function to start the Number Wordle game
 void startNumberWordle()
 {
@@ -35,7 +34,7 @@ void startNumberWordle()
 
     // Initializing the game
     int generatedNumber = generateNumber();
-    int attempts = 5;
+    int attempts = 6;
     int guess;
     bool guessTaken = false;
 
@@ -46,30 +45,30 @@ void startNumberWordle()
         char answer;
 
         if (attempts == -1) { // If the player has lost
-            SetColor(RED);
+            setColor(RED);
             cout << "\nYou have lost! The right number was " << generatedNumber << endl;
-            SetColor(WHITE);
+            setColor(WHITE);
             cout << "Would you like to try again? (Y/N): ";
             cin >> answer;
             if (answer == 'Y' || answer == 'y') {
                 startNumberWordle(); // Restart the game
             }
             else {
-                SetColor(GOLD);
+                setColor(GOLD);
                 cout << "Returning to the main menu...\n";
                 return;
             }
         }
         else if (attempts >= 0) { // If the player still has attempts left
-            SetColor(WHITE);
+            setColor(WHITE);
             cout << "\nYou have " << attempts << " attempts left.\n";
             cout << "Type your guess: ";
             cin >> guess;
 
             while (!guessValid(guess)) {
-                SetColor(RED);
+                setColor(RED);
                 cout << "Your guess is not valid! Please try again (10000-99999): ";
-                SetColor(WHITE);
+                setColor(WHITE);
                 cin >> guess; // If the guess is not valid, ask again
             }
 
@@ -77,7 +76,7 @@ void startNumberWordle()
             for (int i = 4; i > -1; i--) {
                 bool flag = false;
                 if (findNthDigit(i, guess) == findNthDigit(i, generatedNumber)) {
-                    SetColor(GREEN);
+                    setColor(GREEN);
                     cout << findNthDigit(i, guess); // Green if the digit is in the right place
                     flag = true;
                 }
@@ -86,7 +85,7 @@ void startNumberWordle()
                 // Check for yellow (wrong place but in the number)
                 for (int j = 3; j > -1; j--) {
                     if (findNthDigit(i, guess) == findNthDigit(j, generatedNumber) && i != j) {
-                        SetColor(DARKBLUE);
+                        setColor(GOLD);
                         cout << findNthDigit(i, guess); // Yellow if the digit is in the number but wrong place
                         flag = true;
                         break;
@@ -94,23 +93,23 @@ void startNumberWordle()
                 }
 
                 if (!flag) {
-                    SetColor(WHITE);
+                    setColor(WHITE);
                     cout << findNthDigit(i, guess); // White if the digit is not in the number
                 }
             }
         }
 
         if (guess == generatedNumber) { // If the player has won
-            SetColor(GREEN);
+            setColor(GREEN);
             cout << "\nYou have won! Congratulations!\n";
-            SetColor(WHITE);
+            setColor(WHITE);
             cout << "Would you like to try again? (Y/N): ";
             cin >> answer;
             if (answer == 'Y' || answer == 'y') {
                 startNumberWordle(); // Restart the game
             }
             else {
-                SetColor(GOLD);
+                setColor(GOLD);
                 cout << "Returning to the main menu...\n";
                 return;
             }
