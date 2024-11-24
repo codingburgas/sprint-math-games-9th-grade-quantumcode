@@ -13,19 +13,6 @@ using namespace std;
 #define AQUA 3
 #define GOLD 6
 
-//Function, used to set the console text color
-void SetColor(int color)
-{
-	if (SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color)) //Try to set the console text color
-	{
-		return;
-	}
-	else //If setting the color fails, to set it to GOLD as a fallback
-	{
-		SetColor(GOLD);
-	}
-}
-
 //Structure, representing a mathematical question
 struct Question
 {
@@ -38,29 +25,8 @@ struct Question
 	}
 };
 
-//Function to start the Maths Test
-void startMathsTest()
+void createQuestions(std::vector <Question>& questions)
 {
-	//Set the console text color to AQUA for the test header
-	SetColor(AQUA);
-
-	//Display the tests' instructions
-	cout << "                         ------------------------------------------------------------------                        \n";
-	cout << "                        |                           Maths Test                             |\n";
-	cout << "                        |                                                                  |\n";
-	cout << "                        |                      The Rules of the game are:                  |\n";
-	cout << "                        |                                                                  |\n";
-	cout << "                        |  A mathematic question has been asked.                           |\n";
-	cout << "                        |  You have to type in the right answer, in order to               |\n";
-	cout << "                        |  succeed. Otherwise, it says you have failed.                    |\n";
-	cout << "                        |  The questions are rightfully taken from the                     |\n";
-	cout << "                        |  9th grade Mathematics coursebook.                               |\n";
-	cout << "                        |  The test includes questions from : Algebra,                     |\n";
-	cout << "                        |  Percentages, Roots, Geometry.                                   |\n";
-	cout << "                        |                                                                  |\n";
-	cout << "                        |                            Good luck!                            |\n";
-	cout << "                         ------------------------------------------------------------------                         \n";
-	
 	//Initialize a list of questions with their correct answers
 	Question q1(120, "What is permutation of 5?");
 	Question q2(720, "What is permutation of 6?");
@@ -88,7 +54,6 @@ void startMathsTest()
 	Question q24(14, "If a= 42 and b=3, what's the value of c, when c = a:b");
 
 	//Store the questions in a vector
-	vector<Question> questions; 
 	questions.push_back(q1);
 	questions.push_back(q2);
 	questions.push_back(q3);
@@ -113,6 +78,45 @@ void startMathsTest()
 	questions.push_back(q22);
 	questions.push_back(q23);
 	questions.push_back(q24);
+}
+//Function, used to set the console text color
+void SetColor(int color)
+{
+	if (SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color)) //Try to set the console text color
+	{
+		return;
+	}
+	else //If setting the color fails, to set it to GOLD as a fallback
+	{
+		SetColor(GOLD);
+	}
+}
+
+//Function to start the Maths Test
+void startMathsTest()
+{
+	//Set the console text color to AQUA for the test header
+	SetColor(AQUA);
+
+	//Display the tests' instructions
+	cout << "                         ------------------------------------------------------------------                        \n";
+	cout << "                        |                           Maths Test                             |\n";
+	cout << "                        |                                                                  |\n";
+	cout << "                        |                      The Rules of the game are:                  |\n";
+	cout << "                        |                                                                  |\n";
+	cout << "                        |  A mathematic question has been asked.                           |\n";
+	cout << "                        |  You have to type in the right answer, in order to               |\n";
+	cout << "                        |  succeed. Otherwise, it says you have failed.                    |\n";
+	cout << "                        |  The questions are rightfully taken from the                     |\n";
+	cout << "                        |  9th grade Mathematics coursebook.                               |\n";
+	cout << "                        |  The test includes questions from : Algebra,                     |\n";
+	cout << "                        |  Percentages, Roots, Geometry.                                   |\n";
+	cout << "                        |                                                                  |\n";
+	cout << "                        |                            Good luck!                            |\n";
+	cout << "                         ------------------------------------------------------------------                         \n";
+
+	vector<Question>questions;
+	createQuestions(questions);
 	int answer = 0; //Variable to store user's answer
 	int randomQuestion = rand() % questions.size(); //Generate a random index to select a question
 	cout << questions[randomQuestion].question; //Ask the randomly selected question
@@ -123,10 +127,35 @@ void startMathsTest()
 	{
 		SetColor(GREEN);
 		cout << "Hooray! You got it right!";
+		char answer;
+		cout << "Would you like to try again? (y/n)";
+		cin >> answer;
+		if (answer == 'y' || answer == 'Y')
+		{
+			startMathsTest();
+		}
+		else
+		{
+			cout << "Returning to main menu...";
+			return;
+		}
 	}
 	else
 	{
 		SetColor(RED);
 		cout << "Wrong answer! Try again!";
+		char answer;
+		cout << "Would you like to try again? (y/n)";
+		cin >> answer;
+		if (answer == 'y' || answer == 'Y')
+		{
+			startMathsTest();
+		}
+		else
+		{
+			cout << "Returning to main menu...";
+			return;
+		}
 	}
+
 }

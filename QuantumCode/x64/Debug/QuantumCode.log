@@ -1,5 +1,16 @@
-﻿  mathsTest.cpp
-C:\Users\david\OneDrive\Desktop\sprint-math-games-9th-grade-quantumcode\QuantumCode\mathsTest.cpp(71,11): error C2374: 'q12': redefinition; multiple initialization
-  C:\Users\david\OneDrive\Desktop\sprint-math-games-9th-grade-quantumcode\QuantumCode\mathsTest.cpp(66,11):
-  see declaration of 'q12'
+﻿  main.cpp
+  mathsTest.cpp
+C:\Users\david\OneDrive\Desktop\sprint-math-games-9th-grade-quantumcode\QuantumCode\mathsTest.h(4,35): error C2065: 'Question': undeclared identifier
+  (compiling source file 'mathsTest.cpp')
   
+C:\Users\david\OneDrive\Desktop\sprint-math-games-9th-grade-quantumcode\QuantumCode\mathsTest.h(4,27): error C2923: 'std::vector': 'Question' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'mathsTest.cpp')
+  C:\Users\david\OneDrive\Desktop\sprint-math-games-9th-grade-quantumcode\QuantumCode\mathsTest.h(4,35):
+  see declaration of 'Question'
+  
+C:\Users\david\OneDrive\Desktop\sprint-math-games-9th-grade-quantumcode\QuantumCode\mathsTest.h(4,27): error C2976: 'std::vector': too few template arguments
+  (compiling source file 'mathsTest.cpp')
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\vector(436,7):
+  see declaration of 'std::vector'
+  
+  Generating Code...

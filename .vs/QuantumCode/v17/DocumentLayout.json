@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\david\\OneDrive\\Desktop\\sprint-math-games-9th-grade-quantumcode\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{44F43A81-80E4-4A8B-B6AD-A191A14D5695}|QuantumCode\\QuantumCode.vcxproj|C:\\Users\\david\\OneDrive\\Desktop\\sprint-math-games-9th-grade-quantumcode\\QuantumCode\\mathsTest.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{44F43A81-80E4-4A8B-B6AD-A191A14D5695}|QuantumCode\\QuantumCode.vcxproj|solutionrelative:QuantumCode\\mathsTest.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{44F43A81-80E4-4A8B-B6AD-A191A14D5695}|QuantumCode\\QuantumCode.vcxproj|C:\\Users\\david\\OneDrive\\Desktop\\sprint-math-games-9th-grade-quantumcode\\QuantumCode\\mathsTest.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{44F43A81-80E4-4A8B-B6AD-A191A14D5695}|QuantumCode\\QuantumCode.vcxproj|solutionrelative:QuantumCode\\mathsTest.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -23,19 +27,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "mathsTest.h",
+              "DocumentMoniker": "C:\\Users\\david\\OneDrive\\Desktop\\sprint-math-games-9th-grade-quantumcode\\QuantumCode\\mathsTest.h",
+              "RelativeDocumentMoniker": "QuantumCode\\mathsTest.h",
+              "ToolTip": "C:\\Users\\david\\OneDrive\\Desktop\\sprint-math-games-9th-grade-quantumcode\\QuantumCode\\mathsTest.h*",
+              "RelativeToolTip": "QuantumCode\\mathsTest.h*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-24T15:25:07.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "mathsTest.cpp",
               "DocumentMoniker": "C:\\Users\\david\\OneDrive\\Desktop\\sprint-math-games-9th-grade-quantumcode\\QuantumCode\\mathsTest.cpp",
               "RelativeDocumentMoniker": "QuantumCode\\mathsTest.cpp",
               "ToolTip": "C:\\Users\\david\\OneDrive\\Desktop\\sprint-math-games-9th-grade-quantumcode\\QuantumCode\\mathsTest.cpp",
               "RelativeToolTip": "QuantumCode\\mathsTest.cpp",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAAAGYAAAAaAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAADcAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-21T22:11:38.247Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\david\\OneDrive\\Desktop\\sprint-math-games-9th-grade-quantumcode\\QuantumCode\\main.cpp",
               "RelativeDocumentMoniker": "QuantumCode\\main.cpp",
@@ -43,7 +60,8 @@
               "RelativeToolTip": "QuantumCode\\main.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-20T18:01:37.938Z"
+              "WhenOpened": "2024-11-20T18:01:37.938Z",
+              "EditorCaption": ""
             }
           ]
         }
