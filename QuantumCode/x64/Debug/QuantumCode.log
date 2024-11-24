@@ -1,2 +1,6 @@
-﻿  main.cpp
+﻿  guessTheNumber.cpp
+C:\Users\McCan\OneDrive\Рабочий стол\Quantum code\sprint-math-games-9th-grade-quantumcode\QuantumCode\guessTheNumber.cpp(259,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  main.cpp
+  Создание кода...
+C:\Users\McCan\OneDrive\Рабочий стол\Quantum code\sprint-math-games-9th-grade-quantumcode\QuantumCode\guessTheNumber.cpp(337): warning C4715: valid: значение возвращается не при всех путях выполнения
   QuantumCode.vcxproj -> C:\Users\McCan\OneDrive\Рабочий стол\Quantum code\sprint-math-games-9th-grade-quantumcode\x64\Debug\QuantumCode.exe

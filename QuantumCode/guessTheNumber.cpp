@@ -275,13 +275,11 @@ void startGuessTheNumber()
 		cin >> guess; // The player has to enter a guess
 
 		// Check if the input is a valid number
-		if (!isValid(guess)) {
-			while (!isValid(guess)) {
+			while ((stoi(guess) < 0) || stoi(guess) > 10000) {
 				setColor(RED);
 				cout << "Guess not valid. Try again(0-10000)";// Check if the guess is correct
 				setColor(WHITE);
 			}
-		}
 		
 		if (stoi(guess) == questions[randomnum].answer) {// if the player has guessed the number
 			setColor(GREEN);  
@@ -327,6 +325,3 @@ void startGuessTheNumber()
 		}
 	}
 }
-
-
-
