@@ -1,18 +1,1 @@
-﻿  mathsTest.cpp
-  numberPuzzle.cpp
-C:\Users\Георги Лицановски\Desktop\Quantum code\sprint-math-games-9th-grade-quantumcode\QuantumCode\mathsTest.h(4,35): error C2065: 'Question': undeclared identifier
-  (compiling source file 'mathsTest.cpp')
-  
-C:\Users\Георги Лицановски\Desktop\Quantum code\sprint-math-games-9th-grade-quantumcode\QuantumCode\mathsTest.h(4,27): error C2923: 'std::vector': 'Question' is not a valid template type argument for parameter '_Ty'
-  (compiling source file 'mathsTest.cpp')
-  C:\Users\Георги Лицановски\Desktop\Quantum code\sprint-math-games-9th-grade-quantumcode\QuantumCode\mathsTest.h(4,35):
-  see declaration of 'Question'
-  
-C:\Users\Георги Лицановски\Desktop\Quantum code\sprint-math-games-9th-grade-quantumcode\QuantumCode\mathsTest.h(4,27): error C2976: 'std::vector': too few template arguments
-  (compiling source file 'mathsTest.cpp')
-  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\vector(436,1):
-  see declaration of 'std::vector'
-  
-  numberWordle.cpp
-C:\Users\Георги Лицановски\Desktop\Quantum code\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(92,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
+﻿  QuantumCode.vcxproj -> C:\Users\igrok\OneDrive\Рабочий стол\QuantumCode\sprint-math-games-9th-grade-quantumcode\x64\Debug\QuantumCode.exe

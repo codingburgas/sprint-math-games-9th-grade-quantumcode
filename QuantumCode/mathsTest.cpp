@@ -14,44 +14,44 @@ using namespace std;
 #define GOLD 6
 
 //Structure, representing a mathematical question
-struct Question
+struct TestQuestion
 {
 	string question; //Holds the text of the question
 	int answer; // Holds the correct answer to the question
-	Question(int answer, string question) //Constructor to intialize the question and answer
+	TestQuestion(int answer, string question) //Constructor to intialize the question and answer
 	{
 		this->answer = answer;
 		this->question = question;
 	}
 };
 
-void createQuestions(std::vector <Question>& questions)
+void createQuestions(std::vector <TestQuestion>& questions)
 {
 	//Initialize a list of questions with their correct answers
-	Question q1(120, "What is permutation of 5?");
-	Question q2(720, "What is permutation of 6?");
-	Question q3(24, "What is permutation of 4?");
-	Question q4(6, "If 2x - 3 = 9, what is x?");
-	Question q5(5, "If 5x + 4 = 29, what is x?");
-	Question q6(3, "If 9x + 8 = 35, what is x?");
-	Question q7(10, "What is 20% of 50?");
-	Question q8(3, "What is 15% of 20?");
-	Question q9(36, "What is permutation of 3, multiplied by the square roof of 36?");
-	Question q10(16, "What is the perimeter of a square, if a = 4?");
-	Question q11(9, "What is the value of x, if 2x=27-9?");
-	Question q12(5, "What is the square root of 25?");
-	Question q13(0, "If a=0 and b=8, what's the value of c, when c = a.b");
-	Question q14(6, "What is the square root of 36?");
-	Question q15(7, "What is the square root of 49?");
-	Question q16(8, "What is the square root of 64?");
-	Question q17(9, "What is the square root of 81?");
-	Question q18(10, "What is the square root of 100?");
-	Question q19(2, "What is the square root of 4?");
-	Question q20(3, "What is the square root of 9?");
-	Question q21(4, "What is the square root of 16?");
-	Question q22(1, "What does the square root of 25 divided by 5 equal?");
-	Question q23(42, "If a=7 and b=6, what's the value of c, when c = a.b");
-	Question q24(14, "If a= 42 and b=3, what's the value of c, when c = a:b");
+	TestQuestion q1(120, "What is permutation of 5?");
+	TestQuestion q2(720, "What is permutation of 6?");
+	TestQuestion q3(24, "What is permutation of 4?");
+	TestQuestion q4(6, "If 2x - 3 = 9, what is x?");
+	TestQuestion q5(5, "If 5x + 4 = 29, what is x?");
+	TestQuestion q6(3, "If 9x + 8 = 35, what is x?");
+	TestQuestion q7(10, "What is 20% of 50?");
+	TestQuestion q8(3, "What is 15% of 20?");
+	TestQuestion q9(36, "What is permutation of 3, multiplied by the square roof of 36?");
+	TestQuestion q10(16, "What is the perimeter of a square, if a = 4?");
+	TestQuestion q11(9, "What is the value of x, if 2x=27-9?");
+	TestQuestion q12(5, "What is the square root of 25?");
+	TestQuestion q13(0, "If a=0 and b=8, what's the value of c, when c = a.b");
+	TestQuestion q14(6, "What is the square root of 36?");
+	TestQuestion q15(7, "What is the square root of 49?");
+	TestQuestion q16(8, "What is the square root of 64?");
+	TestQuestion q17(9, "What is the square root of 81?");
+	TestQuestion q18(10, "What is the square root of 100?");
+	TestQuestion q19(2, "What is the square root of 4?");
+	TestQuestion q20(3, "What is the square root of 9?");
+	TestQuestion q21(4, "What is the square root of 16?");
+	TestQuestion q22(1, "What does the square root of 25 divided by 5 equal?");
+	TestQuestion q23(42, "If a=7 and b=6, what's the value of c, when c = a.b");
+	TestQuestion q24(14, "If a= 42 and b=3, what's the value of c, when c = a:b");
 
 	//Store the questions in a vector
 	questions.push_back(q1);
@@ -115,7 +115,7 @@ void startMathsTest()
 	cout << "                        |                            Good luck!                            |\n";
 	cout << "                         ------------------------------------------------------------------                         \n";
 
-	vector<Question>questions;
+	vector<TestQuestion>questions;
 	createQuestions(questions);
 	int answer = 0; //Variable to store user's answer
 	int randomQuestion = rand() % questions.size(); //Generate a random index to select a question
