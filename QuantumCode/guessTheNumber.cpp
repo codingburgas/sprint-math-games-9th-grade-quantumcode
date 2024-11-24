@@ -1,103 +1,27 @@
 ﻿#include <iostream>
-#include "guessTheNumber.h"
 #include <random>
 #include <string>
+#include "functions.h"
 #include <vector>
 using namespace std;
 
-//Structure, representing a mathematical question
+// Define color macros
+#define GREEN 2
+#define DARKBLUE 1
+#define RED 4
+#define WHITE 7
+#define GOLD 6
+#define AQUA 3
+// Structure, representing a mathematical question
 struct Question
 {
-	string question; //Holds the text of the question
+	string question; // Holds the text of the question
 	int answer; // Holds the correct answer to the question
-	Question(int answer, string question) { //Constructor to intialize the question and answer
+	Question(int answer, string question) { // Constructor to initialize the question and answer
 		this->answer = answer;
 		this->question = question;
 	}
 };
-
-void startGuessTheNumber()
-{
-	cout << "                         ------------------------------------------------------------------                        \n";
-	cout << "                        |                           Guess The Number                       |\n";
-	cout << "                        |                                                                  |\n";
-	cout << "                        |                      The Rules of the game are:                  |\n";
-	cout << "                        |                                                                  |\n";
-	cout << "                        |  A text will appear on your screen                               |\n";
-	cout << "                        |  Read the text carefully and try to guess the number X           |\n";
-	cout << "                        |  The number X ranges from 0 to 10000.                            |\n";
-	cout << "                        |                                                                  |\n";
-	cout << "                        |                You have 3 tries to guess the number.             |\n";
-	cout << "                        |                            Good luck!                            |\n";
-	cout << "                         ------------------------------------------------------------------                         \n";
-	cout << "                                                                                                                       \n";
-	cout << "                                                                                                                  \n";
-	//displaying rules
-	srand(time(nullptr)); //Makes a random question appear every time
-	vector<Question> questions;
-	createQuestions(questions);
-	int randomnum = rand() % questions.size();
-	int attempts = 3; // How many attempts a player has
-	cout << questions[randomnum].question;
-	char answer;
-	string guess;
-	bool flag = false;
-	while (attempts != 0) {
-		cin >> guess; // The player has to enter a guess
-		for (char& element : guess) {
-			if (!isdigit(element)) flag = true;
-		}
-		if (flag) {
-			bool flag2 = false;
-			int counter = 0;
-			while (flag) {
-				cout << "guess not valid. Try again (0 - 10000)";
-				cin >> guess;
-				for (char& element : guess) {
-					if (isdigit(element)) {
-						counter++;
-					}
-					if (counter == guess.size()) flag2 = true;
-				}
-				if (flag2) flag = false;
-			}
-		}
-		if (stoi(guess) == questions[randomnum].answer) {
-			cout << "You won!" << '\n' << "Would you like to try again? (Y/N): ";
-			cin >> answer;
-			if (answer == 'y' || answer == 'Y') {
-				cout << "Restarting..." << '\n' << '\n' << '\n';
-				startGuessTheNumber(); // Restart the game
-			}
-			else {
-				cout << "Returning to main menu...";
-				return; // Exit to the main menu
-			}
-		}
-		else {
-			attempts--;
-			if (attempts > 0) {
-				cout << "Incorrect. Try again! Attempts left: " << attempts << '\n'; // When the answer is wrong it shows how many attempts has left
-			}
-		}
-
-		if (attempts == 0) {
-			cout << "You lost the game! The correct answer was: " << questions[randomnum].answer << '\n'; // When the player has lost it shows the right answer
-			cout << "Would you like to try again? (Y/N): "; // Asking if they want to try again
-			cin >> answer;
-			if (answer == 'y' || answer == 'Y') {
-				cout << "Restarting..." << '\n\n\n';
-				startGuessTheNumber(); // Restart the game
-			}
-			else {
-				cout << "Returning to main menu...";
-				return; // Exit the game or return to the main menu
-			}
-		}
-	}
-
-
-}
 
 void createQuestions(std::vector <Question>& questions)
 {
@@ -305,3 +229,113 @@ void createQuestions(std::vector <Question>& questions)
 	questions.push_back(q100);
 	// Adds the questions to the end of the questions vector.
 }
+
+void startGuessTheNumber()
+{
+	setColor(AQUA);  // Set color to AQUA
+	cout << "\n";
+	cout << "===============================================================================\n";
+	setColor(GOLD);   // Set color to GOLD
+	cout << "                    *** Guess The Number Game ***                              \n";
+	setColor(AQUA);   // Set color back to AQUA
+	cout << "===============================================================================\n";
+	cout << "\n";
+
+	setColor(GREEN);   // Set color to GREEN
+	cout << "                       *** Game Rules ***\n";
+	setColor(AQUA);   // Set color back to AQUA
+	cout << "-------------------------------------------------------------------------------\n";
+	cout << " - A text will appear on your screen.\n";
+	cout << " - Read the text carefully and try to guess the number X.\n";
+	cout << " - The number X ranges from 0 to 10000.\n";
+	cout << " - You have 3 tries to guess the correct number.\n";
+	setColor(RED);   // Set color to RED
+	cout << " - Good luck!\n";
+	setColor(AQUA);   // Set color back to AQUA
+	cout << "-------------------------------------------------------------------------------\n";
+
+	srand(time(nullptr)); // Makes a random question appear every time
+	vector<Question> questions;
+	createQuestions(questions);
+	int randomnum = rand() % questions.size();
+	int attempts = 3; // How many attempts a player has
+	cout << "\n";
+	setColor(GREEN);   // Set color to GREEN
+	cout << "Question: " << questions[randomnum].question << '\n';
+	setColor(AQUA);   // Set color back to AQUA
+	char answer;
+	string guess;
+	bool flag = false;
+
+	// Start game loop
+	while (attempts != 0) {
+		cout << "\nYour guess: ";
+		cin >> guess; // The player has to enter a guess
+
+		// Check if the input is a valid number
+		for (char& element : guess) {
+			if (!isdigit(element)) flag = true;
+		}
+		if (flag) {
+			bool flag2 = false;
+			int counter = 0;
+			while (flag) {
+				cout << "Invalid guess! Please enter a number between 0 - 10000: ";
+				cin >> guess;
+				for (char& element : guess) {
+					if (isdigit(element)) {
+						counter++;
+					}
+					if (counter == guess.size()) flag2 = true;
+				}
+				if (flag2) flag = false;
+			}
+		}
+		// Check if the guess is correct
+		if (stoi(guess) == questions[randomnum].answer) {
+			setColor(GREEN);  // Set color to GREEN
+			cout << "Congratulations! You guessed the correct number!\n";
+			setColor(WHITE);  // Set color to WHITE
+			cout << "Would you like to play again? (Y/N): ";
+			cin >> answer;
+			if (answer == 'y' || answer == 'Y') {
+				setColor(GOLD);  // Set color to GOLD
+				cout << "Restarting...\n\n";
+				startGuessTheNumber(); // Restart the game
+			}
+			else {
+				setColor(RED);  // Set color to RED
+				cout << "Returning to main menu...\n";
+				return; // Exit to the main menu
+			}
+		}
+		else {
+			attempts--;
+			if (attempts > 0) {
+				setColor(RED);  // Set color to RED
+				cout << "Incorrect! Try again. Attempts left: " << attempts << '\n'; // When the answer is wrong, it shows how many attempts are left
+			}
+		}
+
+		if (attempts == 0) {
+			setColor(RED);  // Set color to RED
+			cout << "You lost the game! The correct answer was: " << questions[randomnum].answer << '\n'; // When the player has lost, it shows the right answer
+			setColor(WHITE);  // Set color to WHITE
+			cout << "Would you like to try again? (Y/N): "; // Asking if they want to try again
+			cin >> answer;
+			if (answer == 'y' || answer == 'Y') {
+				setColor(GOLD);  // Set color to GOLD
+				cout << "Restarting...\n\n";
+				startGuessTheNumber(); // Restart the game
+			}
+			else {
+				setColor(RED);  // Set color to RED
+				cout << "Returning to main menu...\n";
+				return; // Exit the game or return to the main menu
+			}
+		}
+	}
+}
+
+
+

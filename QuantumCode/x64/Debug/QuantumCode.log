@@ -1,11 +1,3 @@
-﻿  functions.cpp
-C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\functions.cpp(43,10): warning C4129: '|': unrecognized character escape sequence
-  guessTheNumber.cpp
-C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\guessTheNumber.cpp(36,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  main.cpp
-  mathsTest.cpp
-  numberPuzzle.cpp
-  numberWordle.cpp
-C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(92,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
+﻿  guessTheNumber.cpp
+C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\QuantumCode\guessTheNumber.cpp(257,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   QuantumCode.vcxproj -> C:\Users\Home\Desktop\sprint-math-games-9th-grade-quantumcode\sprint-math-games-9th-grade-quantumcode\x64\Debug\QuantumCode.exe
