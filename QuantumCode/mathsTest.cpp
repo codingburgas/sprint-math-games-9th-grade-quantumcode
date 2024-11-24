@@ -3,7 +3,7 @@
 #include <vector> // For using the vector container
 #include <string> // For using the string class
 #include <Windows.h> // For Windows-specific console color functions
-#include "mathsTest.h" // Including the functions and definitions for the Maths Test
+#include "mathsTest.h" // Including the functions for the Maths Test
 using namespace std;
 
 // Defining color codes for console text
@@ -88,7 +88,7 @@ void SetColor(int color)
     {
         return;
     }
-    else // If setting the color fails, set it to GOLD as a fallback
+    else // If setting the color fails set it to GOLD 
     {
         SetColor(GOLD);
     }
@@ -97,10 +97,9 @@ void SetColor(int color)
 // Function to start the Maths Test
 void startMathsTest()
 {
-    // Set the console text color to AQUA for the test header
     SetColor(AQUA);
 
-    // Display the test's instructions
+    // Display the rules
     cout << "                         ------------------------------------------------------------------                        \n";
     cout << "                        |                           Maths Test                             |\n";
     cout << "                        |                                                                  |\n";
@@ -118,18 +117,17 @@ void startMathsTest()
     cout << "                         ------------------------------------------------------------------                         \n";
 
     vector<TestQuestion> questions;
-    createQuestions(questions); // Create the list of questions
+    createQuestions(questions); // Create a list of questions
 
     int answer = 0; // Variable to store user's answer
-    int randomQuestion = rand() % questions.size(); // Generate a random index to select a question
-    cout << questions[randomQuestion].question; // Ask the randomly selected question
+    int randomQuestion = rand() % questions.size(); // Generate a number to select a random question
+    cout << questions[randomQuestion].question; // display the randomly selected question
     cin >> answer;
 
     // Check if the user's answer is correct 
     if (answer == questions[randomQuestion].answer)
     {
-        // Enhanced win message with borders and a better design
-        SetColor(GREEN); // Set color to GREEN for correct answer
+        SetColor(GREEN); // Set color to GREEN if the player has won
         cout << "\n\n";
         cout << "*****************************************\n";
         cout << "*           CONGRATULATIONS!             *\n";
@@ -142,19 +140,18 @@ void startMathsTest()
         cin >> answer;
         if (answer == 'y' || answer == 'Y')
         {
-            startMathsTest(); // Restart the test if user chooses 'y'
+            startMathsTest(); // Restarting the test 
         }
         else
         {
-            SetColor(GOLD); // Set color to GOLD for returning to the menu
+            SetColor(GOLD); // returing to main menu
             cout << "Returning to main menu..." << endl;
             return;
         }
     }
     else
     {
-        // Enhanced lose message with borders and a better design
-        SetColor(RED); // Set color to RED for wrong answer
+        SetColor(RED); // Set color to RED if the player has lost
         cout << "\n\n";
         cout << "*****************************************\n";
         cout << "*           OOPS! INCORRECT!             *\n";
@@ -167,11 +164,11 @@ void startMathsTest()
         cin >> answer;
         if (answer == 'y' || answer == 'Y')
         {
-            startMathsTest(); // Restart the test if user chooses 'y'
+            startMathsTest(); // Restarting the test
         }
         else
         {
-            SetColor(GOLD); // Set color to GOLD for returning to the menu
+            SetColor(GOLD); // returning to the main menu
             cout << "Returning to main menu..." << endl;
             return;
         }

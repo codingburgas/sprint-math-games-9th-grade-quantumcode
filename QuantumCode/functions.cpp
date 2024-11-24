@@ -10,6 +10,7 @@ using namespace std;
 #define GOLD 6
 #define AQUA 3
 //defines color
+
 void setColor(int color)
 {
 	if (SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color)) 
@@ -60,6 +61,6 @@ void displayMenu()
 	cout << "  [5] Learn About Us\n";
 	cout << "  [6] Exit\n";
 
-	setColor(GREEN); // Prompt color
+	setColor(GREEN); 
 	cout << "\n  Please enter your choice (1-6): "; //To select a option
 }

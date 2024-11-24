@@ -21,7 +21,7 @@ void startNumberWordle()
     cout << "====================================================================\n";
     setColor(WHITE);
 
-    // Displaying the game rules with better formatting
+    // Displaying the game rules
     setColor(GREEN);
     cout << "Game Rules:\n";
     cout << "  - A 5-digit number between 10000 and 99999 is hidden.\n";
@@ -32,19 +32,18 @@ void startNumberWordle()
     cout << "    - A digit with no glow means it is not in the number at all.\n";
     cout << "====================================================================\n";
 
-    // Initializing the game
     int generatedNumber = generateNumber();
     int attempts = 6;
     int guess;
     bool guessTaken = false;
 
-    // Game loop
+    // Starting a loop and counting the attempts
     while (true) {
         if (attempts < 5) guessTaken = true;
         attempts--;
         char answer;
 
-        if (attempts == -1) { // If the player has lost
+        if (attempts == 0) { // If the player has lost
             setColor(RED);
             cout << "\nYou have lost! The right number was " << generatedNumber << endl;
             setColor(WHITE);
@@ -55,7 +54,7 @@ void startNumberWordle()
             }
             else {
                 setColor(GOLD);
-                cout << "Returning to the main menu...\n";
+                cout << "Returning to the main menu...\n"; // else return to the main menu
                 return;
             }
         }
@@ -72,7 +71,7 @@ void startNumberWordle()
                 cin >> guess; // If the guess is not valid, ask again
             }
 
-            // Feedback loop for each digit in the guess
+            // Tell if the player has found any digits
             for (int i = 4; i > -1; i--) {
                 bool flag = false;
                 if (findNthDigit(i, guess) == findNthDigit(i, generatedNumber)) {
@@ -110,7 +109,7 @@ void startNumberWordle()
             }
             else {
                 setColor(GOLD);
-                cout << "Returning to the main menu...\n";
+                cout << "Returning to the main menu...\n"; // else return to the main menu
                 return;
             }
         }

@@ -1,3 +1,1 @@
-﻿  numberWordle.cpp
-C:\Users\McCan\OneDrive\Рабочий стол\Quantum code\sprint-math-games-9th-grade-quantumcode\QuantumCode\numberWordle.cpp(123,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  QuantumCode.vcxproj -> C:\Users\McCan\OneDrive\Рабочий стол\Quantum code\sprint-math-games-9th-grade-quantumcode\x64\Debug\QuantumCode.exe
+﻿  QuantumCode.vcxproj -> C:\Users\McCan\OneDrive\Рабочий стол\Quantum code\sprint-math-games-9th-grade-quantumcode\x64\Debug\QuantumCode.exe

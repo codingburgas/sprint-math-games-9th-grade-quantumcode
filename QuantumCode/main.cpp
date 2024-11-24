@@ -14,22 +14,22 @@ int main()
 	
 	while (true) {
 		system("cls"); // clears the screen when selected
-		displayMenu();
+		displayMenu(); //displays menu
 		cin >> answer;
 		if (answer == '1') {
-			startNumberWordle(); 
+			startNumberWordle();  //function to start number wordle
 		}
 		else if (answer == '2') {
-			startGuessTheNumber();
+			startGuessTheNumber(); //function to start guessing the number
 		}
 		else if (answer == '3') {
-			startNumberPuzzle();
+			startNumberPuzzle(); //function to start number puzzle
 		}
 		else if (answer == '4') {
-			startMathsTest();
+			startMathsTest(); //function to start maths test
 		}
 		else if (answer == '5') {
-			aboutUs(); //choices
+			aboutUs(); //to display about us info
 		}
 		else if (answer == '6') {
 			cout << "Quitting...";
