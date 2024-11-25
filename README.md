@@ -27,10 +27,10 @@ Answer math questions to test your speed and accuracy at various difficulty leve
  
 ### Documentation
  
-[ Documentation]()
+[ Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/gvlitsanowski23_codingburgas_bg/EaLVUubne4VAjRTHSAFY8hMBv5t6rflX-iU20n68C6Dmgg?e=0yIxnR)
 
 ### Presentation
-[Presentation](h)
+[Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/gvlitsanowski23_codingburgas_bg/EdbJRj33zV9Fh5vakgcFBIkBir99-7ks09U7Ol3WJkbXpA?e=Drr81v)
 <br></br>
 ## 🚀 How to run <a name="install"></a>
 *The following instructions are going to show you how to set up the project*
